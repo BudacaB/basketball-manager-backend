@@ -48,7 +48,7 @@ MongoDB running locally on wtv port
 
 .NetCore Api running -> install NuGet for MongoDB
 
-3. Player Model class
+4. Player Model class
 
 - https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-model?view=aspnetcore-3.0&tabs=visual-studio
 
@@ -56,25 +56,25 @@ MongoDB running locally on wtv port
 
 - Also stamina, speed, strength, injured (boolean)
 
-4. Make new controller in BE - TeamController - write manually (google how to create .Net Api controller / use weatherforecast)
+5. Make new controller in BE - TeamController - write manually (google how to create .Net Api controller / use weatherforecast)
 
 - /ListTeamPlayers - to call - return empty array
 - Make a method ListTeamPlayers - get array of players
 
-5. Make NodeJS console app -> called with 'node myApp.js'
+6. Make NodeJS console app -> called with 'node myApp.js'
 
 - populateDB.js
 - insert script for each player
 - database driver https://mongodb.github.io/node-mongodb-native/
 - display outcome with Promise - 'players inserted successfully! player count = X'
 
-6. Create container with my script - create docker file in Alpine linux
+7. Create container with my script - create docker file in Alpine linux
 
 - docker file - pull alpine / copy all project files for populateDB.js script from local path inside to image / run script
 - check docs
 - both mongo and script containers run manually and work
 
-7. Check Docker Compose docs - how to start 2 services - MongoDB and the populateDB.js script
+8. Check Docker Compose docs - how to start 2 services - MongoDB and the populateDB.js script
 
 ---
 
