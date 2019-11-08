@@ -16,7 +16,9 @@ namespace BballApi.Controllers
         [HttpGet]
         public Player Get()
         {
-            return new Player { FirstName = "test" };
+            return new Player { Id = Guid.NewGuid(), FirstName = "Latrell", LastName = "Sprewell", Position = "Small Forward", Age = 27, Weight = 210, College = "UCLA", Salary = 4767000, Stamina = 87, Speed = 93, Strength = 91, Injured = false  };
+            
+            // string.Format("{0:0,0}", value) add commas for thousands to int
         }
 
         // GET: api/Team/5
