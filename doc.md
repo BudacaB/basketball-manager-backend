@@ -58,6 +58,7 @@ MongoDB running locally on wtv port
 
 5. Make new controller in BE - TeamController - write manually (google how to create .Net Api controller / use weatherforecast)
 
+- https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-3.0
 - https://dev.to/lucas0707/how-to-quickly-install-swagger-in-a-net-core-application-jkc
 - /ListTeamPlayers - to call - return empty array
 - Make a method ListTeamPlayers - get array of players
