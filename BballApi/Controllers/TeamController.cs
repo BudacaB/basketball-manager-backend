@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using BballApi.Models;
 using BballApi.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BballApi.Controllers
@@ -13,31 +12,33 @@ namespace BballApi.Controllers
     [ApiController]
     public class TeamController : ControllerBase
     {
-
-        [HttpGet(Name = "team")]
+        // GET api/values
+        [HttpGet]
         public List<Player> Get()
         {
             return TeamActions.ListTeamPlayers();
-
-            // string.Format("{0:0,0}", value) add commas for thousands to int
         }
 
-        [HttpGet("{id}", Name = "player")]
-        public string Get(int id)
+        // GET api/values/5
+        [HttpGet("{id}")]
+        public ActionResult<string> Get(int id)
         {
             return "value";
         }
 
+        // POST api/values
         [HttpPost]
         public void Post([FromBody] string value)
         {
         }
 
+        // PUT api/values/5
         [HttpPut("{id}")]
         public void Put(int id, [FromBody] string value)
         {
         }
 
+        // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
