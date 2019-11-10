@@ -12,6 +12,7 @@ namespace BballApi.Models
         public string LastName { get; set; }
         public string Position { get; set; }
         public int Age { get; set; }
+        public decimal Height { get; set; }
         public int Weight { get; set; }
         public string College { get; set; }
         public int Salary { get; set; }

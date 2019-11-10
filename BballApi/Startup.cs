@@ -49,7 +49,7 @@ namespace BballApi
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bball Api V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "bball api v1");
             });
         }
     }
