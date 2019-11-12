@@ -70,13 +70,15 @@ MongoDB running locally on wtv port
 - database driver https://mongodb.github.io/node-mongodb-native/
 - display outcome with Promise - 'players inserted successfully! player count = X'
 
-7. Create container with my script - create docker file in Alpine linux
+7. Fetch players in API from mongo instead of hardcoded
+
+8. Create container with my script - create docker file in Alpine linux
 
 - docker file - pull alpine / copy all project files for populateDB.js script from local path inside to image / run script
 - check docs
 - both mongo and script containers run manually and work
 
-8. Check Docker Compose docs - how to start 2 services - MongoDB and the populateDB.js script
+9. Check Docker Compose docs - how to start 2 services - MongoDB and the populateDB.js script
 
 ---
 
