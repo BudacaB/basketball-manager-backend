@@ -1,20 +1,17 @@
-module.exports = function(db, docs) {
-  const collection = db.collection("players");
-  docs.forEach(function(doc) {
-    collection.insertOne(doc, function(err, result) {
-      return new Promise(function(resolve, reject) {
-        resolve("Player inserted successfully!");
-        reject(err);
-      })
-        .then(function(value) {
-          console.log(value);
-        })
-        .catch(function(reason) {
-          console.log(reason);
-        });
-    });
+module.exports = function(db, collectionName, docs) {
+  const collection = db.collection(collectionName);
+  collection.insertMany(docs, function(err, result) {
+    if (result) {
+      return Promise.resolve("Added succesfully").then(function(value) {
+        console.log(value);
+      });
+    } else {
+      return Promise.reject(err).then(function(error) {
+        console.log(error);
+      });
+    }
   });
   collection.countDocuments().then(function(value) {
-    console.log("Player count = " + value);
+    console.log(`${collectionName} count = ` + value);
   });
 };

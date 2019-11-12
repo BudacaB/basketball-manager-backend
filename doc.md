@@ -70,7 +70,25 @@ MongoDB running locally on wtv port
 - database driver https://mongodb.github.io/node-mongodb-native/
 - display outcome with Promise - 'players inserted successfully! player count = X'
 
-7. Fetch players in API from mongo instead of hardcoded
+- 2 teams / each player must have 'BelongsToTeam' field https://stackoverflow.com/questions/6334048/foreign-keys-in-mongo
+- data denormalization - 2 tables - 'teams' and 'players'
+- 'teams' - id and name - + 'Roster' field with players full names
+- see details for 1 player - query in 'players' table
+- one-to-many data model ('one team has many players')
+- by references: https://docs.mongodb.com/manual/tutorial/model-referenced-one-to-many-relationships-between-documents/ or
+- by data duplication: https://docs.mongodb.com/manual/tutorial/model-embedded-one-to-many-relationships-between-documents/
+
+7. Fetch players in .Net API from mongo instead of hardcoded
+
+/team
+
+- verb: GET
+- returns: team details, with players
+
+/player/{playerFullNameParameter}
+
+- verb: GET
+- returns: player details
 
 8. Create container with my script - create docker file in Alpine linux
 

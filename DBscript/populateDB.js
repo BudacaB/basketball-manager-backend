@@ -1,11 +1,14 @@
 const MongoClient = require("mongodb").MongoClient;
 const assert = require("assert");
-let players = require("./initDBplayers");
+let players = require("./players");
+let teams = require("./teams");
 let insertDocuments = require("./insertDocs");
 
 const url = "mongodb://localhost:28017";
 
-const dbName = "team";
+const dbName = "bball";
+const teamsCollection = "teams";
+const playersCollection = "players";
 
 const client = new MongoClient(url);
 
@@ -15,7 +18,8 @@ client.connect(function(err) {
 
   const db = client.db(dbName);
 
-  insertDocuments(db, players);
+  insertDocuments(db, teamsCollection, teams);
+  insertDocuments(db, playersCollection, players);
 
   client.close();
 });
