@@ -1,6 +1,7 @@
 const MongoClient = require("mongodb").MongoClient;
 const assert = require("assert");
 let players = require("./initDBplayers");
+let insertDocuments = require("./insertDocs");
 
 const url = "mongodb://localhost:28017";
 
@@ -14,29 +15,7 @@ client.connect(function(err) {
 
   const db = client.db(dbName);
 
-  insertDocuments(db);
+  insertDocuments(db, players);
 
   client.close();
 });
-
-const insertDocuments = function(db) {
-  const collection = db.collection("players");
-  players.forEach(function(player) {
-    collection.insertOne(player, function(err, result) {
-      return new Promise(function(resolve, reject) {
-        assert.equal(err, null);
-        resolve("Player inserted successfully!");
-        reject(err);
-      })
-        .then(function(value) {
-          console.log(value);
-        })
-        .catch(function(reason) {
-          console.log(reason);
-        });
-    });
-  });
-  collection.countDocuments().then(function(value) {
-    console.log("Player count = " + value);
-  });
-};
