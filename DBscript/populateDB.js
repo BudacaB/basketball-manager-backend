@@ -18,8 +18,12 @@ client.connect(function(err) {
 
   const db = client.db(dbName);
 
-  insertDocuments(db, teamsCollection, teams);
-  insertDocuments(db, playersCollection, players);
+  insertDocuments(db, teamsCollection, teams).then(result =>
+    console.log("Teams count = " + result)
+  );
+  insertDocuments(db, playersCollection, players).then(result =>
+    console.log("Players count = " + result)
+  );
 
   client.close();
 });

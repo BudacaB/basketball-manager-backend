@@ -8,7 +8,10 @@ module.exports = [
       "Michael Jordan",
       "Tim Duncan",
       "Ben Wallace",
-      "Vince Carter"
+      "Vince Carter",
+      "Antonio McDyess",
+      "Jason Kidd",
+      "LeBron James"
     ]
   },
   {
@@ -19,8 +22,11 @@ module.exports = [
       "John Stockton",
       "Kobe Bryant",
       "Chris Webber",
+      "Yao Ming",
       "Tracy McGrady",
-      "Yao Ming"
+      "Mike Bibby",
+      "Pau Gasol",
+      "Rick Fox"
     ]
   }
 ];

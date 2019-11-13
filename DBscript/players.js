@@ -12,7 +12,8 @@ module.exports = [
     Speed: 87,
     Strength: 93,
     Injured: false,
-    BelongsToTeam: "Heat"
+    BelongsToTeam: "Heat",
+    Playing: true
   },
   {
     FirstName: "Alonzo",
@@ -27,7 +28,8 @@ module.exports = [
     Speed: 77,
     Strength: 99,
     Injured: false,
-    BelongsToTeam: "Heat"
+    BelongsToTeam: "Heat",
+    Playing: true
   },
   {
     FirstName: "John",
@@ -42,7 +44,8 @@ module.exports = [
     Speed: 97,
     Strength: 70,
     Injured: false,
-    BelongsToTeam: "Heat"
+    BelongsToTeam: "Heat",
+    Playing: true
   },
   {
     FirstName: "Kobe",
@@ -57,14 +60,15 @@ module.exports = [
     Speed: 96,
     Strength: 87,
     Injured: false,
-    BelongsToTeam: "Heat"
+    BelongsToTeam: "Heat",
+    Playing: true
   },
   {
     FirstName: "Chris",
     LastName: "Webber",
     Position: "Power Forward",
     Age: 31,
-    Height: 6.1,
+    Height: 6.9,
     Weight: 270,
     College: "Oregon",
     Salary: 3476000,
@@ -72,7 +76,8 @@ module.exports = [
     Speed: 83,
     Strength: 95,
     Injured: false,
-    BelongsToTeam: "Heat"
+    BelongsToTeam: "Heat",
+    Playing: true
   },
   {
     FirstName: "Yao",
@@ -87,7 +92,8 @@ module.exports = [
     Speed: 75,
     Strength: 85,
     Injured: false,
-    BelongsToTeam: "Heat"
+    BelongsToTeam: "Heat",
+    Playing: false
   },
   {
     FirstName: "Tracy",
@@ -102,7 +108,56 @@ module.exports = [
     Speed: 92,
     Strength: 81,
     Injured: false,
-    BelongsToTeam: "Heat"
+    BelongsToTeam: "Heat",
+    Playing: false
+  },
+  {
+    FirstName: "Mike",
+    LastName: "Bibby",
+    Position: "Point Guard",
+    Age: 26,
+    Height: 6.1,
+    Weight: 180,
+    College: "Georgia",
+    Salary: 2333000,
+    Stamina: 88,
+    Speed: 91,
+    Strength: 70,
+    Injured: false,
+    BelongsToTeam: "Heat",
+    Playing: false
+  },
+  {
+    FirstName: "Pau",
+    LastName: "Gasol",
+    Position: "Power Forward",
+    Age: 27,
+    Height: 7.0,
+    Weight: 290,
+    College: "Oregon",
+    Salary: 2960000,
+    Stamina: 82,
+    Speed: 77,
+    Strength: 83,
+    Injured: false,
+    BelongsToTeam: "Heat",
+    Playing: false
+  },
+  {
+    FirstName: "Rick",
+    LastName: "Fox",
+    Position: "Small Forward",
+    Age: 32,
+    Height: 6.7,
+    Weight: 240,
+    College: "NY",
+    Salary: 2387000,
+    Stamina: 77,
+    Speed: 75,
+    Strength: 79,
+    Injured: false,
+    BelongsToTeam: "Heat",
+    Playing: false
   },
   {
     FirstName: "Latrell",
@@ -117,7 +172,8 @@ module.exports = [
     Speed: 93,
     Strength: 91,
     Injured: false,
-    BelongsToTeam: "Lakers"
+    BelongsToTeam: "Lakers",
+    Playing: true
   },
   {
     FirstName: "Shaq",
@@ -132,7 +188,8 @@ module.exports = [
     Speed: 75,
     Strength: 99,
     Injured: false,
-    BelongsToTeam: "Lakers"
+    BelongsToTeam: "Lakers",
+    Playing: true
   },
   {
     FirstName: "Gary",
@@ -147,7 +204,8 @@ module.exports = [
     Speed: 95,
     Strength: 75,
     Injured: false,
-    BelongsToTeam: "Lakers"
+    BelongsToTeam: "Lakers",
+    Playing: true
   },
   {
     FirstName: "Michael",
@@ -162,7 +220,8 @@ module.exports = [
     Speed: 97,
     Strength: 88,
     Injured: false,
-    BelongsToTeam: "Lakers"
+    BelongsToTeam: "Lakers",
+    Playing: true
   },
   {
     FirstName: "Tim",
@@ -177,7 +236,8 @@ module.exports = [
     Speed: 80,
     Strength: 97,
     Injured: false,
-    BelongsToTeam: "Lakers"
+    BelongsToTeam: "Lakers",
+    Playing: true
   },
   {
     FirstName: "Ben",
@@ -192,7 +252,8 @@ module.exports = [
     Speed: 80,
     Strength: 99,
     Injured: true,
-    BelongsToTeam: "Lakers"
+    BelongsToTeam: "Lakers",
+    Playing: false
   },
   {
     FirstName: "Vince",
@@ -207,6 +268,55 @@ module.exports = [
     Speed: 91,
     Strength: 83,
     Injured: false,
-    BelongsToTeam: "Lakers"
+    BelongsToTeam: "Lakers",
+    Playing: false
+  },
+  {
+    FirstName: "Antonio",
+    LastName: "McDyess",
+    Position: "Power Forward",
+    Age: 34,
+    Height: 6.9,
+    Weight: 275,
+    College: "Arizona",
+    Salary: 4836000,
+    Stamina: 75,
+    Speed: 77,
+    Strength: 89,
+    Injured: false,
+    BelongsToTeam: "Lakers",
+    Playing: false
+  },
+  {
+    FirstName: "Jason",
+    LastName: "Kidd",
+    Position: "Point Guard",
+    Age: 31,
+    Height: 6.4,
+    Weight: 210,
+    College: "Utah",
+    Salary: 3550000,
+    Stamina: 93,
+    Speed: 95,
+    Strength: 80,
+    Injured: true,
+    BelongsToTeam: "Lakers",
+    Playing: false
+  },
+  {
+    FirstName: "LeBron",
+    LastName: "James",
+    Position: "Small Forward",
+    Age: 28,
+    Height: 6.8,
+    Weight: 235,
+    College: "N/A",
+    Salary: 6740000,
+    Stamina: 95,
+    Speed: 95,
+    Strength: 97,
+    Injured: false,
+    BelongsToTeam: "Lakers",
+    Playing: false
   }
 ];
