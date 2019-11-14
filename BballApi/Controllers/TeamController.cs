@@ -16,7 +16,8 @@ namespace BballApi.Controllers
         [HttpGet]
         public List<Player> Get()
         {
-            return TeamActions.ListTeamPlayers();
+            throw new NotImplementedException();
+            //return teamService.ListTeamPlayers();
         }
 
         // GET api/values/5

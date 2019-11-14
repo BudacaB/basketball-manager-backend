@@ -11,11 +11,5 @@ module.exports = function(db, collectionName, docs) {
       });
     }
   });
-  return new Promise((resolve, reject) => {
-    resolve(collection.countDocuments());
-    reject("Something went wrong");
-  });
-  // collection.countDocuments().then(function(value) {
-  //   console.log(`${collectionName} count = ` + value);
-  // });
+  return collection.countDocuments();
 };

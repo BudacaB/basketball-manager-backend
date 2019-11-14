@@ -18,11 +18,11 @@ client.connect(function(err) {
 
   const db = client.db(dbName);
 
-  insertDocuments(db, teamsCollection, teams).then(result =>
-    console.log("Teams count = " + result)
+  insertDocuments(db, teamsCollection, teams).then(collectionCount =>
+    console.log("Teams count = " + collectionCount)
   );
-  insertDocuments(db, playersCollection, players).then(result =>
-    console.log("Players count = " + result)
+  insertDocuments(db, playersCollection, players).then(collectionCount =>
+    console.log("Players count = " + collectionCount)
   );
 
   client.close();
