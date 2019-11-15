@@ -2,13 +2,9 @@ module.exports = function(db, collectionName, docs) {
   const collection = db.collection(collectionName);
   collection.insertMany(docs, function(err, result) {
     if (result) {
-      Promise.resolve(result).then(function(value) {
-        console.log(value);
-      });
+      console.log(result);
     } else {
-      Promise.reject(err).then(function(error) {
-        console.log(error);
-      });
+      console.log(err);
     }
   });
   return collection.countDocuments();
