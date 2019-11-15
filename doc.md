@@ -100,7 +100,7 @@ MongoDB running locally on wtv port
 
 ---
 
-Extra read:
+Extra:
 
 - https://expressjs.com/en/guide/writing-middleware.html
 - https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-3.0
