@@ -102,6 +102,8 @@ MongoDB running locally on wtv port
 
 Extra:
 
+(! Microservices)
+
 - https://expressjs.com/en/guide/writing-middleware.html
 - https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup?view=aspnetcore-3.0
 - https://www.youtube.com/watch?v=hUE_j6q0LTQ - singleton
