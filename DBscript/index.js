@@ -19,7 +19,7 @@ client.connect(function(err) {
   const db = client.db(dbName);
 
   //makeCollectionMongoCompatible
-  //append _id prop to docs by code (First + Last / Name)
+  //add index as id prop to teams and players
 
   insertDocuments(db, teamsCollection, teams).then(collectionCount =>
     console.log("Teams count = " + collectionCount)
