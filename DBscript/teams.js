@@ -1,6 +1,5 @@
 module.exports = [
   {
-    _id: "Lakers",
     name: "Lakers",
     roster: [
       "Latrell Sprewell",
@@ -16,7 +15,6 @@ module.exports = [
     ]
   },
   {
-    _id: "Heat",
     name: "Heat",
     roster: [
       "Kevin Garnett",
