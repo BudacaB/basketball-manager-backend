@@ -12,19 +12,16 @@ namespace BballApi.Controllers
     [ApiController]
     public class TeamController : ControllerBase
     {
-        // GET api/values
-        [HttpGet]
-        public List<Player> Get()
+        public ITeamService _teamService;
+        public TeamController(ITeamService teamService)
         {
-            throw new NotImplementedException();
-            //return teamService.ListTeamPlayers();
+            _teamService = teamService;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        [HttpGet("{team}")]
+        public async Task<ActionResult<Team>> Get(string team)
         {
-            return "value";
+            return await _teamService.GetTeam(team);
         }
 
         // POST api/values

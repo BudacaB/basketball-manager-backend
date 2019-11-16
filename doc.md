@@ -115,3 +115,14 @@ Extra:
 Next wk:
 
 - https://www.youtube.com/watch?v=WV2Ed1QTst8
+
+---
+
+Next Todos:
+
+- fix db insert script
+- make a new controller for players
+- make a new service for players
+- inject service in startup singleton
+- GetPlayer(name) method
+- https://www.geeksforgeeks.org/c-sharp-constructors/

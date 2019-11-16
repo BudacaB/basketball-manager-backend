@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,7 +8,6 @@ namespace BballApi.Models
 {
     public class Player
     {
-        public Guid Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Position { get; set; }
@@ -20,5 +20,7 @@ namespace BballApi.Models
         public int Speed { get; set; }
         public int Strength { get; set; }
         public bool Injured { get; set; }
+        public string Team { get; set; }
+        public bool Playing { get; set; }
     }
 }

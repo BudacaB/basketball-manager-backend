@@ -18,6 +18,9 @@ client.connect(function(err) {
 
   const db = client.db(dbName);
 
+  //makeCollectionMongoCompatible
+  //append _id prop to docs by code (First + Last / Name)
+
   insertDocuments(db, teamsCollection, teams).then(collectionCount =>
     console.log("Teams count = " + collectionCount)
   );

@@ -1,5 +1,8 @@
 ﻿using BballApi.Models;
+using MongoDB.Bson;
+using MongoDB.Bson.IO;
 using MongoDB.Driver;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,25 +10,44 @@ using System.Threading.Tasks;
 
 namespace BballApi.Services
 {
-    public  class TeamService
+    public class TeamService : ITeamService
     {
         IMongoDatabase database;
         
-        TeamService()
+        public TeamService()
         {
             var mongoClient = new MongoClient("mongodb://localhost:28017");
             database = mongoClient.GetDatabase("bball");
+            
         }
-        public List<Player> ListTeamPlayers()
+
+        public async Task<Team> GetTeam(string teamName)
         {
-            var teamList = new List<Player>();
+            
+            var filterByTeamName = Builders<BsonDocument>.Filter.Eq("name", teamName);
+            var teamCollection = database.GetCollection<BsonDocument>("teams");
+            var teamDoc = await teamCollection.Find(filterByTeamName).FirstOrDefaultAsync();
+            var parsedToJsonString = teamDoc.ToJson();
+            Team team = Newtonsoft.Json.JsonConvert.DeserializeObject<Team>(parsedToJsonString);
 
-            // 1. Research mongo .net driver docs - how to read a collection
-            // 2. Singleton (1 instance of service for all) - https://www.youtube.com/watch?v=hUE_j6q0LTQ
-
-            //database.ListCollections
-
-            return teamList;
+            return team;
         }
+
+
+        //public List<Player> ListTeamPlayers()
+        //{
+        //    var teamList = new List<Player>();
+        //    var playersCollection = database.GetCollection<BsonDocument>("players");
+
+        //    var playerDocs = playersCollection.FindAsync(new BsonDocument()).Result.ToList();
+        //    foreach (BsonDocument doc in playerDocs)
+        //    {
+        //        var jsonWriterSettings = new JsonWriterSettings { OutputMode = JsonOutputMode.Strict };
+        //        JObject playerAttributes = JObject.Parse(doc.ToJson(jsonWriterSettings));
+        //        teamList.Add(new Player { FirstName = playerAttributes[1].ToString() });
+        //    }
+
+        //    return teamList;
+        //}
     }
 }

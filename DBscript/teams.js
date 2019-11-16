@@ -1,7 +1,8 @@
 module.exports = [
   {
-    Name: "Lakers",
-    Roster: [
+    _id: "Lakers",
+    name: "Lakers",
+    roster: [
       "Latrell Sprewell",
       "Shaq O'Neil",
       "Gary Payton",
@@ -15,8 +16,9 @@ module.exports = [
     ]
   },
   {
-    Name: "Heat",
-    Roster: [
+    _id: "Heat",
+    name: "Heat",
+    roster: [
       "Kevin Garnett",
       "Alonzo Mourning",
       "John Stockton",
