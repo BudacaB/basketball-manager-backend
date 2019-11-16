@@ -3,12 +3,16 @@ const assert = require("assert");
 let players = require("./players");
 let teams = require("./teams");
 let insertDocuments = require("./insertDocs");
+let makeMongoCompatible = require("./makeMongoCompatible");
 
 const url = "mongodb://localhost:28017";
 
 const dbName = "bball";
 const teamsCollection = "teams";
 const playersCollection = "players";
+
+teams.forEach(makeMongoCompatible);
+players.forEach(makeMongoCompatible);
 
 const client = new MongoClient(url);
 
@@ -17,14 +21,6 @@ client.connect(function(err) {
   console.log("Connected successfully to server");
 
   const db = client.db(dbName);
-
-  teams.forEach((team, index) => {
-    team._id = index;
-  });
-
-  players.forEach((player, index) => {
-    player._id = index;
-  });
 
   insertDocuments(db, teamsCollection, teams).then(collectionCount =>
     console.log("Teams count = " + collectionCount)
