@@ -112,10 +112,6 @@ Extra:
 - https://www.youtube.com/watch?v=86ymhq54V5k
 - https://www.youtube.com/watch?v=IKD2-MAkXyQ
 
-Next wk:
-
-- https://www.youtube.com/watch?v=WV2Ed1QTst8
-
 ---
 
 Next Todos:
@@ -126,3 +122,7 @@ Next Todos:
 - inject service in startup singleton
 - GetPlayer(name) method
 - https://www.geeksforgeeks.org/c-sharp-constructors/
+
+Next wk:
+
+- https://www.youtube.com/watch?v=WV2Ed1QTst8
