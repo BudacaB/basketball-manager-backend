@@ -19,9 +19,11 @@ namespace BballApi.Controllers
         }
 
         [HttpGet("{team}")]
-        public async Task<ActionResult<Team>> Get(string team)
+        public async Task<ActionResult<Team>> GetTeam(string team)
         {
-            return await _teamService.GetTeam(team);
+            var result = await _teamService.GetTeam(team);
+            if (result == null) return NoContent();
+            return Ok(result);
         }
 
         [Obsolete]

@@ -23,7 +23,11 @@ namespace BballApi.Controllers
         [HttpGet("{player}")]
         public async Task<ActionResult<Player>> GetPlayer(string player)
         {
-            return await _playerService.GetPlayer(player);
+            //var randomInterval = new Random();
+            //await Task.Delay(TimeSpan.FromSeconds(randomInterval.Next(0, 4)));
+            var result = await _playerService.GetPlayer(player);
+            if (result == null) return NoContent();
+            return Ok(result);
         }
 
         [Obsolete]

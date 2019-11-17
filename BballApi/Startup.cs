@@ -49,6 +49,7 @@ namespace BballApi
             {
                 app.UseHsts();
             }
+            app.UseCors(t => t.AllowAnyOrigin());
 
             app.UseHttpsRedirection();
             app.UseMvc();
@@ -58,6 +59,7 @@ namespace BballApi
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "Bball Api V1");
             });
+
         }
     }
 }

@@ -27,7 +27,14 @@ namespace BballApi.Services
             var filterByTeamName = Builders<BsonDocument>.Filter.Eq("name", teamName);
             var teamCollection = database.GetCollection<BsonDocument>("teams");
             var teamDoc = await teamCollection.Find(filterByTeamName).FirstOrDefaultAsync();
+
+            if (teamDoc == null)
+            {
+                return null;
+            }
+
             var parsedToJsonString = teamDoc.ToJson();
+
             Team team = Newtonsoft.Json.JsonConvert.DeserializeObject<Team>(parsedToJsonString);
 
             return team;
