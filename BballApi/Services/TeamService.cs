@@ -33,21 +33,5 @@ namespace BballApi.Services
             return team;
         }
 
-
-        //public List<Player> ListTeamPlayers()
-        //{
-        //    var teamList = new List<Player>();
-        //    var playersCollection = database.GetCollection<BsonDocument>("players");
-
-        //    var playerDocs = playersCollection.FindAsync(new BsonDocument()).Result.ToList();
-        //    foreach (BsonDocument doc in playerDocs)
-        //    {
-        //        var jsonWriterSettings = new JsonWriterSettings { OutputMode = JsonOutputMode.Strict };
-        //        JObject playerAttributes = JObject.Parse(doc.ToJson(jsonWriterSettings));
-        //        teamList.Add(new Player { FirstName = playerAttributes[1].ToString() });
-        //    }
-
-        //    return teamList;
-        //}
     }
 }

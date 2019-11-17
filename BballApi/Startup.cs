@@ -30,6 +30,7 @@ namespace BballApi
             
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<ITeamService, TeamService>();
+            services.AddSingleton<IPlayerService, PlayerService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new Info { Title = "Bball Api", Version = "v1" });

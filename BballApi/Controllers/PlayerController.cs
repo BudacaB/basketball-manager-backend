@@ -4,24 +4,26 @@ using System.Linq;
 using System.Threading.Tasks;
 using BballApi.Models;
 using BballApi.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BballApi.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class TeamController : ControllerBase
+    public class PlayerController : ControllerBase
     {
-        public ITeamService _teamService;
-        public TeamController(ITeamService teamService)
+        public IPlayerService _playerService;
+
+        public PlayerController(IPlayerService playerService)
         {
-            _teamService = teamService;
+            _playerService = playerService;
         }
 
-        [HttpGet("{team}")]
-        public async Task<ActionResult<Team>> Get(string team)
+        [HttpGet("{player}")]
+        public async Task<ActionResult<Player>> GetPlayer(string player)
         {
-            return await _teamService.GetTeam(team);
+            return await _playerService.GetPlayer(player);
         }
 
         [Obsolete]
