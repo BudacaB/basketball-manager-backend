@@ -2,31 +2,31 @@ module.exports = [
   {
     name: "Lakers",
     roster: [
-      "Latrell Sprewell",
-      "Shaq O'Neil",
-      "Gary Payton",
-      "Michael Jordan",
-      "Tim Duncan",
-      "Ben Wallace",
-      "Vince Carter",
-      "Antonio McDyess",
-      "Jason Kidd",
-      "LeBron James"
+      "Troy Daniels",
+      "DeMarcus Cousins",
+      "Rajon Rondo",
+      "LeBron James",
+      "Anthony Davis",
+      "Dwight Howard",
+      "Danny Green",
+      "Kyle Kuzma",
+      "Quinn Cook",
+      "Alex Caruso"
     ]
   },
   {
-    name: "Heat",
+    name: "Warriors",
     roster: [
-      "Kevin Garnett",
-      "Alonzo Mourning",
-      "John Stockton",
-      "Kobe Bryant",
-      "Chris Webber",
-      "Yao Ming",
-      "Tracy McGrady",
-      "Mike Bibby",
-      "Pau Gasol",
-      "Rick Fox"
+      "Marquese Chriss",
+      "Willie Cauley-Stein",
+      "Stephen Curry",
+      "Alec Burks",
+      "Draymond Green",
+      "Kevon Looney",
+      "Klay Thompson",
+      "Wayne Ellington",
+      "Taj Gibson",
+      "Damyean Dotson"
     ]
   }
 ];

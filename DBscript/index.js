@@ -3,7 +3,7 @@ const assert = require("assert");
 let players = require("./players");
 let teams = require("./teams");
 let insertDocuments = require("./insertDocs");
-let makeDocMongoCompatible = require("./makeDocMongoCompatible");
+let addIDandPic = require("./addIDandPic");
 
 const url = "mongodb://localhost:28017";
 
@@ -11,8 +11,8 @@ const dbName = "bball";
 const teamsCollection = "teams";
 const playersCollection = "players";
 
-teams.forEach(makeDocMongoCompatible);
-players.forEach(makeDocMongoCompatible);
+teams.forEach(addIDandPic);
+players.forEach(addIDandPic);
 
 const client = new MongoClient(url);
 
