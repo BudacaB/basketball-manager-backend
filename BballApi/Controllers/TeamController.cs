@@ -18,7 +18,15 @@ namespace BballApi.Controllers
             _teamService = teamService;
         }
 
-        [HttpGet("{team}")]
+        [HttpGet("/Teams")]
+        public async Task<ActionResult<List<Team>>> GetAllTeams()
+        {
+            var result = await _teamService.GetAllTeams();
+            if (result == null) return NoContent();
+            return Ok(result);
+        }
+
+        [HttpGet("/Team/{team}")]
         public async Task<ActionResult<Team>> GetTeam(string team)
         {
             var result = await _teamService.GetTeam(team);

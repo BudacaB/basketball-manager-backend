@@ -15,5 +15,6 @@ namespace BballApi.Models
 
         public string Name { get; set; }
         public List<string> Roster { get; set; }
+        public string Pic { get; set; }
     }
 }

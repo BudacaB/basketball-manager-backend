@@ -22,5 +22,6 @@ namespace BballApi.Models
         public bool Injured { get; set; }
         public string Team { get; set; }
         public bool Playing { get; set; }
+        public string Pic { get; set; }
     }
 }
