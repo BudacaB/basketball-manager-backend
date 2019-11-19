@@ -3,12 +3,12 @@ module.exports = function(doc, index) {
   doc._id = index;
 
   if (doc.name === "Lakers" || doc.name === "Warriors") {
-    doc.pic = picsUrl + `/${doc.name}`.toLocaleLowerCase() + ".png";
+    doc.pic = picsUrl + `/${doc.name}`.toLowerCase() + ".png";
   } else {
     doc.pic =
       picsUrl +
-      `/${doc.team}`.toLocaleLowerCase() +
-      `/${doc.firstname}`.toLocaleLowerCase() +
+      `/${doc.team}`.toLowerCase() +
+      `/${doc.firstname}`.toLowerCase() +
       ".png";
   }
 };
