@@ -48,7 +48,7 @@ namespace BballApi.Services
 
             if (teamDocs == null)
             {
-                return null;
+                return teamsList;
             }
 
             teamDocs.ForEach(teamDoc => {

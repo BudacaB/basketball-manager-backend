@@ -22,7 +22,7 @@ namespace BballApi.Controllers
         public async Task<ActionResult<List<Team>>> GetAllTeams()
         {
             var result = await _teamService.GetAllTeams();
-            if (result == null) return NoContent();
+            if (result.Count == 0) return NoContent();
             return Ok(result);
         }
 
