@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MongoDB.Driver.Linq;
 
 namespace BballApi.Services
 {
@@ -23,21 +24,34 @@ namespace BballApi.Services
 
         public async Task<Team> GetTeam(string teamName)
         {
+
+            //var filterByTeamName = Builders<BsonDocument>.Filter.Eq("name", teamName);
+
+            //Team team = new Team();
+            var teamCollection = database.GetCollection<Team>("teams");
+            var teamExists = teamCollection.AsQueryable<Team>().Any(e => e.Name == teamName);
             
-            var filterByTeamName = Builders<BsonDocument>.Filter.Eq("name", teamName);
-            var teamCollection = database.GetCollection<BsonDocument>("teams");
-            var teamDoc = await teamCollection.Find(filterByTeamName).FirstOrDefaultAsync();
-             
-            if (teamDoc == null)
+            if (!teamExists)
             {
                 return null;
             }
 
-            var parsedToJsonString = teamDoc.ToJson();
-
-            Team team = Newtonsoft.Json.JsonConvert.DeserializeObject<Team>(parsedToJsonString);
-
+            Team team = teamCollection.AsQueryable<Team>().Where(e => e.Name == teamName).First();
+           
             return team;
+
+            //var teamDoc = await teamCollection.Find(filterByTeamName).FirstOrDefaultAsync();
+             
+            //if (teamDoc == null)
+            //{
+            //    return null;
+            //}
+
+            //var parsedToJsonString = teamDoc.ToJson();
+
+            //Team team = Newtonsoft.Json.JsonConvert.DeserializeObject<Team>(parsedToJsonString);
+
+            //return null;
         }
 
         public async Task<List<Team>> GetAllTeams()
