@@ -5,35 +5,24 @@ using System.Threading.Tasks;
 using BballApi.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using MongoDB.Driver.Linq;
 
 namespace BballApi.Services
 {
     public class PlayerService : IPlayerService
     {
-        IMongoDatabase database;
+        IMongoQueryable<Player> playerTable;
 
         public PlayerService()
         {
-            var mongoClient = new MongoClient("mongodb://localhost:28017");
-            database = mongoClient.GetDatabase("bball");
-
+            playerTable = new MongoClient("mongodb://localhost:28017")
+                            .GetDatabase("bball")
+                            .GetCollection<Player>("players")
+                            .AsQueryable<Player>();
         }
         public async Task<Player> GetPlayer(string playerName)
         {
-            var filterByPlayerLastName = Builders<BsonDocument>.Filter.Eq("lastname", playerName);
-            var playerCollection = database.GetCollection<BsonDocument>("players");
-            var playerDoc = await playerCollection.Find(filterByPlayerLastName).FirstOrDefaultAsync();
-
-            if (playerDoc == null)
-            {
-                return null;
-            }
-
-            var parseToJsonString = playerDoc.ToJson();
-
-            Player player = Newtonsoft.Json.JsonConvert.DeserializeObject<Player>(parseToJsonString);
-
-            return player;
+            return await playerTable.FirstOrDefaultAsync(e => e.LastName == playerName);
         }
     }
 }
