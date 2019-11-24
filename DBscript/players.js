@@ -123,7 +123,7 @@ module.exports = [
     stamina: 88,
     speed: 91,
     strength: 70,
-    injured: false,
+    injured: true,
     team: "Warriors",
     playing: false
   },
@@ -299,7 +299,7 @@ module.exports = [
     stamina: 93,
     speed: 95,
     strength: 80,
-    injured: true,
+    injured: false,
     team: "Lakers",
     playing: false
   },
