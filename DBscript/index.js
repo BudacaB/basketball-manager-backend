@@ -20,6 +20,7 @@ client.connect(function(err) {
   assert.equal(null, err);
   console.log("Connected successfully to server");
 
+  //creates the db
   const db = client.db(dbName);
 
   insertDocuments(db, teamsCollection, teams).then(collectionCount =>
