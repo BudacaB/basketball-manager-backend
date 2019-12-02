@@ -9,11 +9,11 @@ namespace BballApi.Services
 {
     public class TeamService : ITeamService
     {
-        IMongoQueryable<Team> teamsTable;
+        IMongoQueryable<Team> teamsCollection;
 
         public TeamService()
         {
-            teamsTable = new MongoClient("mongodb://localhost:28017")
+            teamsCollection = new MongoClient("mongodb://localhost:28017")
                             .GetDatabase("bball")
                             .GetCollection<Team>("teams")
                             .AsQueryable<Team>();
@@ -21,12 +21,12 @@ namespace BballApi.Services
 
         public async Task<Team> GetTeam(string teamName)
         {
-            return await teamsTable.FirstOrDefaultAsync(e => e.Name == teamName);
+            return await teamsCollection.FirstOrDefaultAsync(e => e.Name == teamName);
         }
 
         public async Task<List<Team>> GetAllTeams()
         {
-            return await teamsTable.ToListAsync();
+            return await teamsCollection.ToListAsync();
         }
 
     }

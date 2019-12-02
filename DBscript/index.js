@@ -23,12 +23,8 @@ client.connect(function(err) {
   //creates the db
   const db = client.db(dbName);
 
-  insertDocuments(db, teamsCollection, teams).then(collectionCount =>
-    console.log("Teams count = " + collectionCount)
-  );
-  insertDocuments(db, playersCollection, players).then(collectionCount =>
-    console.log("Players count = " + collectionCount)
-  );
+  insertDocuments(db, teamsCollection, teams);
+  insertDocuments(db, playersCollection, players);
 
   client.close();
 });
