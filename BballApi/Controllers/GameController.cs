@@ -20,11 +20,13 @@ namespace BballApi.Controllers
             _gameService = gameService;
         }
 
-        [Obsolete]
-        [HttpGet]
-        public IEnumerable<string> Get()
+        [HttpGet("/Games")]
+        public async Task<ActionResult<List<Game>>> GetAllGames()
         {
-            return new string[] { "value1", "value2" };
+            var result = await _gameService.GetAllGames();
+            if (result.Count == 0) return NoContent();
+            return Ok(result);
+
         }
 
         [Obsolete]

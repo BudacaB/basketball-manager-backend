@@ -9,5 +9,6 @@ namespace BballApi.Services
     public interface IGameService
     {
         void PostGame(ReceivedGame game);
+        Task<List<Game>> GetAllGames();
     }
 }
