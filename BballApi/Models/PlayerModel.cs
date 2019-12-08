@@ -3,7 +3,7 @@
 namespace BballApi.Models
 {
     [BsonIgnoreExtraElements]
-    public class Player
+    public class PlayerModel
     {
         [BsonElement("firstname")]
         public string FirstName { get; set; }

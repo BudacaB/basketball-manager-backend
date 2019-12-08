@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace BballApi.Models
 {
     [BsonIgnoreExtraElements]
-    public class Game
+    public class GameDataModel
     {
         public string Name { get; set; }
         public string Team { get; set; }

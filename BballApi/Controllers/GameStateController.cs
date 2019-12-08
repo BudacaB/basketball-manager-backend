@@ -11,17 +11,17 @@ namespace BballApi.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class GameController : ControllerBase
+    public class GameStateController : ControllerBase
     {
-        public IGameService _gameService;
+        public IGameStateService _gameService;
 
-        public GameController(IGameService gameService)
+        public GameStateController(IGameStateService gameService)
         {
             _gameService = gameService;
         }
 
         [HttpGet("/Games")]
-        public async Task<ActionResult<List<Game>>> GetAllGames()
+        public async Task<ActionResult<List<GameViewModel>>> GetAllGames()
         {
             var result = await _gameService.GetAllGames();
             if (result.Count == 0) return NoContent();
@@ -38,7 +38,7 @@ namespace BballApi.Controllers
 
         
         [HttpPost]
-        public void PostGame(ReceivedGame game)
+        public void PostGame(GameViewModel game)
         {
             _gameService.PostGame(game);
         }

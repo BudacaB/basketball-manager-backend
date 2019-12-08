@@ -8,7 +8,7 @@ namespace BballApi.Services
 {
     public interface ITeamService
     {
-        Task<Team> GetTeam(string teamName);
-        Task<List<Team>> GetAllTeams();
+        Task<TeamModel> GetTeam(string teamName);
+        Task<List<TeamModel>> GetAllTeams();
     }
 }

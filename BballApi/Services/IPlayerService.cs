@@ -8,6 +8,6 @@ namespace BballApi.Services
 {
     public interface IPlayerService
     {
-        Task<Player> GetPlayer(string playerName);
+        Task<PlayerModel> GetPlayer(string playerName);
     }
 }

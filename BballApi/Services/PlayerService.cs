@@ -8,16 +8,16 @@ namespace BballApi.Services
 {
     public class PlayerService : IPlayerService
     {
-        IMongoQueryable<Player> playersCollection;
+        IMongoQueryable<PlayerModel> playersCollection;
 
         public PlayerService()
         {
             playersCollection = new MongoClient("mongodb://localhost:28017")
                             .GetDatabase("bball")
-                            .GetCollection<Player>("players")
-                            .AsQueryable<Player>();
+                            .GetCollection<PlayerModel>("players")
+                            .AsQueryable<PlayerModel>();
         }
-        public async Task<Player> GetPlayer(string playerName)
+        public async Task<PlayerModel> GetPlayer(string playerName)
         {
             return await playersCollection.FirstOrDefaultAsync(e => e.LastName == playerName);
         }

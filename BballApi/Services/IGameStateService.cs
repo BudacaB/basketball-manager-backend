@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BballApi.Services
 {
-    public interface IGameService
+    public interface IGameStateService
     {
-        void PostGame(ReceivedGame game);
-        Task<List<Game>> GetAllGames();
+        void PostGame(GameViewModel game);
+        Task<List<GameViewModel>> GetAllGames();
     }
 }

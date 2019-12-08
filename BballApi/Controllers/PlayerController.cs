@@ -18,7 +18,7 @@ namespace BballApi.Controllers
         }
 
         [HttpGet("{player}")]
-        public async Task<ActionResult<Player>> GetPlayer(string player)
+        public async Task<ActionResult<PlayerModel>> GetPlayer(string player)
         {
             //var randomInterval = new Random();
             //await Task.Delay(TimeSpan.FromSeconds(randomInterval.Next(0, 4)));

@@ -4,9 +4,9 @@ using MongoDB.Bson.Serialization.Attributes;
 namespace BballApi.Models
 {
     [BsonIgnoreExtraElements]
-    public class Team
+    public class TeamModel
     {
-        public Team()
+        public TeamModel()
         {
             this.Roster = new List<string>();
             //null reference exception is avoided because we always initialize this in ctor
