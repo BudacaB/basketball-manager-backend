@@ -50,7 +50,7 @@ namespace BballApi
             {
                 app.UseHsts();
             }
-            app.UseCors(t => t.AllowAnyOrigin());
+            app.UseCors(t => t.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader().AllowCredentials());
 
             app.UseHttpsRedirection();
             app.UseMvc();

@@ -23,20 +23,18 @@ namespace BballApi.Services
 
         public void PostGame(GameViewModel game)
         {
-            var gameToInsert = new GameDataModel { Name = game.Name, Team = game.Team, Creation = DateTime.Now };
-            gamesWriteCollection.InsertOne(gameToInsert);
+            gamesWriteCollection.InsertOne(GameMapper.MapToDataGame(game));
         }
 
         public async Task<List<GameViewModel>> GetAllGames()
         {
-            var dataGames =  await gamesReadCollection.ToListAsync();
+            List<GameDataModel> dataGames =  await gamesReadCollection.ToListAsync();
             List<GameViewModel> viewGames = new List<GameViewModel>();
             foreach (GameDataModel game in dataGames)
             {
-                viewGames.Add(new GameViewModel { Name = game.Name, Team = game.Team });
+                viewGames.Add(GameMapper.MapToViewGame(game));
             }
             return viewGames;
-
         }
     }
 }
