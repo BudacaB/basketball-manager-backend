@@ -12,6 +12,25 @@ namespace BballApi.Services
     {
         IMongoCollection<GameDataModel> gamesWriteCollection;
         IMongoQueryable<GameDataModel> gamesReadCollection;
+
+        public static GameViewModel MapToViewGame(GameDataModel dataGame)
+        {
+            if (dataGame == null)
+            {
+                throw new ArgumentNullException(nameof(dataGame));
+            }
+            return new GameViewModel { Name = dataGame.Name, Team = dataGame.Team };
+        }
+
+        public static GameDataModel MapToDataGame(GameViewModel viewGame)
+        {
+            if (viewGame == null)
+            {
+                throw new ArgumentNullException(nameof(viewGame));
+            }
+            return new GameDataModel { Name = viewGame.Name, Team = viewGame.Team, Creation = DateTime.Now };
+        }
+
         public GameStateService()
         {
             gamesWriteCollection = new MongoClient("mongodb://localhost:28017")
@@ -23,17 +42,14 @@ namespace BballApi.Services
 
         public void PostGame(GameViewModel game)
         {
-            gamesWriteCollection.InsertOne(GameMapper.MapToDataGame(game));
+            gamesWriteCollection.InsertOne(MapToDataGame(game));
         }
 
         public async Task<List<GameViewModel>> GetAllGames()
         {
             List<GameDataModel> dataGames =  await gamesReadCollection.ToListAsync();
-            List<GameViewModel> viewGames = new List<GameViewModel>();
-            foreach (GameDataModel game in dataGames)
-            {
-                viewGames.Add(GameMapper.MapToViewGame(game));
-            }
+            List<GameViewModel> viewGames = dataGames.Select(game => MapToViewGame(game)).ToList();
+            
             return viewGames;
         }
     }
